@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".DeletePwliseis">
+
+    <TextView
+        android:id="@+id/txtDeletePwl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_margin="24dp"
+        android:text="Διαγραφή Αγοράς"
+        android:textAlignment="center"
+        android:textSize="25dp"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/delete_txtPwl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:hint="Δώσε id">
+    </EditText>
+
+    <Button
+        android:id="@+id/deletePwl"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Διαγραφή"
+        android:layout_gravity="center"
+        android:focusableInTouchMode="true">
+    </Button>
+
+
+</LinearLayout>

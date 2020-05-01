@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Kalathi">
+
+    <TextView
+        android:id="@+id/txtKalathi"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_margin="24dp"
+        android:text="Tο καλάθι μου "
+        android:textAlignment="center"
+        android:textSize="25dp"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/edit_kalathi"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="number"
+        android:hint="Δώσε id">
+    </EditText>
+
+    <EditText
+        android:id="@+id/edit_kalathi2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:hint="Δώσε όνομα">
+    </EditText>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Πλήθος A:"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="5dp">
+    </TextView>
+    <TextView
+        android:id="@+id/proionA"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="0"
+        android:textSize="20dp"
+        android:ems="10">
+    </TextView>
+    //B
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Πλήθος B:"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="5dp">
+    </TextView>
+    <TextView
+        android:id="@+id/proionB"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="0"
+        android:textSize="20dp"
+        android:ems="10">
+    </TextView>
+
+    //C
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Πλήθος C:"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="5dp">
+    </TextView>
+    <TextView
+        android:id="@+id/proionC"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="0"
+        android:textSize="20dp"
+        android:ems="10">
+    </TextView>
+
+    //D
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Πλήθος D:"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="5dp">
+    </TextView>
+    <TextView
+        android:id="@+id/proionD"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="0"
+        android:textSize="20dp"
+        android:ems="10">
+    </TextView>
+
+    <Button
+        android:id="@+id/submit_Kalathi_agora"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ολοκλήρωη παραγγελίας"
+        android:layout_gravity="center"
+        >
+    </Button>
+
+
+
+</LinearLayout>

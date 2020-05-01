@@ -1,0 +1,95 @@
+<resources>
+    <string name="app_name">eshop3</string>
+    <string name="logariasmos">Λογαριασμός</string>
+    <string name="agora">Αγορά</string>
+    <string name="about">About</string>
+    <string name="home">Αρχική</string>
+    <string name="search">Αναζήτηση</string>
+    <string name="eshop">ΚΑΛΩΣ ΟΡΙΣΑΤΕ ΣΤΟ ESHOP!</string>
+    <string name="about_message">Αυτή η εφαρμογή δημιουργήθηκε απο τον Ευθύμιο Κελέσμητο ΑΜ:154465 στο πλαίσιο του μαθήματος Προηγμένα Θέματα Αλληλεπίδρασης.</string>
+    <string name="insert_fragment">Δημιούργησε Λογαριασμό</string>
+    <string name="dimioyrgia">Δημιούργια Λογαριασμού</string>
+    <string name="delete">Διαγραφή Λογαριασμού</string>
+    <string name="edit">Επεξεργασία Λογαριασμού</string>
+
+    <string-array name="queries_array">
+        <item> Ερώτηση 1</item>
+        <item> Ερώτηση 2</item>
+        <item> Ερώτηση 3</item>
+        <item> Ερώτηση 4</item>
+        <item> Ερώτηση 5</item>
+        <item> Ερώτηση 6</item>
+        <item> Ερώτηση 7</item>
+        <item> Ερώτηση 8</item>
+        <item> Ερώτηση 9</item>
+        <item> Ερώτηση 10</item>
+        <item> Ερώτηση 11</item>
+    </string-array>
+
+    <string-array name="queries_description_array">
+        <item> 1. Εμφανίστε το απόθεμα προιον Α</item>
+        <item> 2. Εμφανίστε το απόθεμα προιον Β</item>
+        <item> 3. Εμφανίστε το απόθεμα προιον Γ</item>
+        <item> 4. Εμφανίστε το αποθεμα προιον Δ</item>
+        <item> 5. Εμφανίστε τις συνολικές πωλήσεις.</item>
+        <item> 6. Τις πωλήσεις του προιον Α</item>
+        <item> 7. Τις πωλησεις του προιον Β</item>
+        <item> 8. Τις πωλησεις του προιον Γ</item>
+        <item> 9. Τις πωλησεις του προιον Δ</item>
+        <item> 10. Εμφανίστε αναλυτικά τον πίνακα Πελάτες.</item>
+        <item> 11. Εμφανίστε αναλυτικά τον πίνακα προϊόντα</item>
+    </string-array>
+
+    <string name="xaraktiristika1">
+        \n<ul>
+            \n<li>Μοντέλο: HP 255 G7</li>
+            \n<li>Επεξεργαστής AMD Ryzen 3 2.5GHz:</li>
+            \n<li>Μνήμη Ram: 8GB</li>
+            \n<li>Χωρητικότητα: 256GB SSD</li>
+            \n<li>Κάρτα γραφικών: AMD Radeon Vega Graphics</li>
+            \n<li>Χρονολογία: 2018</li>
+            \n<li>Τιμή: 500</li>
+        </ul>
+    </string>
+
+    <string name="xaraktiristika2">
+        \n<ul>
+            \n<li>Μοντέλο: Lenovo IdeaPad L340-17IRH</li>
+            \n<li>Επεξεργαστής: Intel Core i7 9750H 2.60GHz</li>
+            \n<li>Μνήμη Ram: 8GB</li>
+            \n<li>Χωρητικότητα: 512GB SSD</li>
+            \n<li>Κάρτα γραφικών: GeForce GTX 1650</li>
+            \n<li>Χρονολογία: 2019</li>
+            \n<li>Τιμή: 870</li>
+        </ul>
+    </string>
+
+    <string name="xaraktiristika3">
+        \n<ul>
+            \n<li>Μοντέλο: Asus 15 X509FB-EJ037T</li>
+            \n<li>Επεξεργαστής: Intel Core i7 8565U 1.8GHz</li>
+            \n<li>Μνήμη Ram: 8GB</li>
+            \n<li>Χωρητικότητα: 512GB SSD</li>
+            \n<li>Κάρτα γραφικών: GeForce MX110</li>
+            \n<li>Χρονολογία: 2018</li>
+            \n<li>Τιμή: 750 </li>
+        </ul>
+    </string>
+
+    <string name="xaraktiristika4">
+        \n<ul>
+            \n<li>Μοντέλο: Apple MacBook Air 13"</li>
+            \n<li>Επεξεργαστής: Intel Core i5 8210Y 1.6GHz</li>
+            \n<li>Μνήμη Ram: 8GB</li>
+            \n<li>Χωρητικότητα: 128GB SSD</li>
+            \n<li>Κάρτα γραφικών: Intel UHD Graphics 617</li>
+            \n<li>Χρονολογία: 2019</li>
+            \n<li>Τιμή: 1000</li>
+        </ul>
+    </string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+
+</resources>

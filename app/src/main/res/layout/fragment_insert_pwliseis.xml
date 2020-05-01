@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".InsertPwliseis">
+
+    <TextView
+        android:id="@+id/txtInsertPwl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_margin="24dp"
+        android:text="Κάνε εισαγωγή μιας αγοράς"
+        android:textAlignment="center"
+        android:textSize="25dp"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/edit_textPwl1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="number"
+        android:hint="Δώσε id">
+    </EditText>
+
+    <EditText
+        android:id="@+id/edit_textPwl2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:hint="Δώσε όνομα">
+    </EditText>
+
+    <EditText
+        android:id="@+id/edit_textPwl3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="number"
+        android:hint="Δώσε πλήθος προϊόν Α">
+    </EditText>
+
+    <EditText
+        android:id="@+id/edit_txtPwl4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Δώσε πλήθος προϊόν Β"
+        android:inputType="number">
+    </EditText>
+
+    <EditText
+        android:id="@+id/edit_textPwl5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Δώσε πλήθος προϊόν Γ"
+        android:inputType="number">
+    </EditText>
+
+    <EditText
+        android:id="@+id/edit_textPwl6"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Δώσε πλήθος προϊόν Δ"
+        android:inputType="number">
+    </EditText>
+
+    <Button
+        android:id="@+id/submitPwl"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Δημιουργία"
+        android:layout_gravity="center"
+        >
+    </Button>
+</LinearLayout>

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".UpdateProionta">
+
+    <TextView
+        android:id="@+id/txtUpdatePr"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_margin="24dp"
+        android:text="Επεξεργασία Προιον"
+        android:textAlignment="center"
+        android:textSize="25dp"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/update_textPr1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:hint="Δώσε id">
+    </EditText>
+
+    <EditText
+        android:id="@+id/update_textPr2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:hint="Δώσε απόθεμα">
+    </EditText>
+
+    <EditText
+        android:id="@+id/update_textPr3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:hint="Δώσε χρονολογία">
+    </EditText>
+
+    <EditText
+        android:id="@+id/update_textPr4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Δώσε τιμή"
+        android:inputType="textPersonName">
+    </EditText>
+
+    <Button
+        android:id="@+id/updatePr"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Επεξεργασία"
+        android:layout_gravity="center"
+        android:focusableInTouchMode="true">
+    </Button>
+</LinearLayout>

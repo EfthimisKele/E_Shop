@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Agora_fragment">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <Button
+                android:id="@+id/submit_kalathi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:text="Μεταβίβαση στο καλαθι μου">
+            </Button>
+
+            //ΠΡΟΙΟΝ Α
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text="ΠΡΟΙΟΝ Α"
+                android:textStyle="bold"
+                android:textSize="30dp"
+                android:textColor="@color/colorPrimary"
+                android:textAlignment="center"
+                android:layout_marginTop="40dp">
+            </TextView>
+            <ImageView
+                android:id="@+id/image1"
+                android:layout_width="532dp"
+                android:layout_height="272dp"
+                android:layout_gravity="center"
+                android:src="@drawable/laptop1">
+            </ImageView>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="Χαρακτηριστικά"
+                android:textStyle="bold"
+                android:layout_marginTop="10dp"
+                android:layout_gravity="center">
+            </TextView>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:contentDescription="image1"
+                android:layout_gravity="left"
+                android:layout_marginTop="0dp"
+                android:text="@string/xaraktiristika1">
+            </TextView>
+            <EditText
+                android:id="@+id/textproionA"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:layout_gravity="center"
+                android:layout_marginTop="15dp"
+                android:text="0"
+                android:inputType="numberSigned">
+            </EditText>
+            <Button
+                android:id="@+id/prosthikiA"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:text="Προσθήκη στο καλάθι">
+            </Button>
+
+            //ΠΡΟΙΟΝ Β
+            <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:text="ΠΡΟΙΟΝ B"
+            android:textStyle="bold"
+            android:textSize="30dp"
+            android:textColor="@color/colorPrimary"
+            android:textAlignment="center"
+            android:layout_marginTop="40dp">
+        </TextView>
+            <ImageView
+                android:id="@+id/image2"
+                android:layout_width="648dp"
+                android:layout_height="325dp"
+                android:layout_gravity="center"
+                android:src="@drawable/laptop2"></ImageView>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="Χαρακτηριστικά"
+            android:textStyle="bold"
+            android:layout_marginTop="10dp"
+            android:layout_gravity="center">
+        </TextView>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:layout_marginTop="0dp"
+            android:text="@string/xaraktiristika2">
+        </TextView>
+        <EditText
+            android:id="@+id/textproionB"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:layout_gravity="center"
+            android:layout_marginTop="15dp"
+            android:text="0"
+            android:inputType="number"
+            >
+        </EditText>
+        <Button
+            android:id="@+id/prosthikiB"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:text="Προσθήκη στο καλάθι">
+        </Button>
+
+        //ΠΡΟΙΟΝ C
+        <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:text="ΠΡΟΙΟΝ C"
+        android:textStyle="bold"
+        android:textSize="30dp"
+        android:textColor="@color/colorPrimary"
+        android:textAlignment="center"
+        android:layout_marginTop="40dp">
+    </TextView>
+            <ImageView
+                android:id="@+id/image3"
+                android:layout_width="581dp"
+                android:layout_height="269dp"
+                android:layout_gravity="center"
+                android:src="@drawable/laptop3">
+            </ImageView>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:text="Χαρακτηριστικά"
+        android:textStyle="bold"
+        android:layout_marginTop="10dp"
+        android:layout_gravity="center">
+    </TextView>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="left"
+        android:layout_marginTop="0dp"
+        android:text="@string/xaraktiristika3">
+    </TextView>
+    <EditText
+        android:id="@+id/textproionC"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:layout_gravity="center"
+        android:layout_marginTop="15dp"
+        android:text="0"
+        android:inputType="number">
+    </EditText>
+    <Button
+        android:id="@+id/prosthikiC"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:text="Προσθήκη στο καλάθι">
+    </Button>
+
+            //ΠΡΟΙΟΝ D
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text="ΠΡΟΙΟΝ D"
+                android:textStyle="bold"
+                android:textSize="30dp"
+                android:textColor="@color/colorPrimary"
+                android:textAlignment="center"
+                android:layout_marginTop="40dp">
+            </TextView>
+
+            <ImageView
+                android:id="@+id/image4"
+                android:layout_width="617dp"
+                android:layout_height="324dp"
+                android:layout_gravity="center"
+                android:src="@drawable/laptop4">
+
+            </ImageView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="Χαρακτηριστικά"
+                android:textStyle="bold"
+                android:layout_marginTop="10dp"
+                android:layout_gravity="center">
+            </TextView>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:layout_marginTop="0dp"
+                android:text="@string/xaraktiristika4">
+            </TextView>
+            <EditText
+                android:id="@+id/textproionD"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:layout_gravity="center"
+                android:layout_marginTop="15dp"
+                android:text="0"
+                android:inputType="number"
+                >
+            </EditText>
+
+            <Button
+                android:id="@+id/prosthikiD"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:text="Προσθήκη στο καλάθι">
+            </Button>
+         </LinearLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>
