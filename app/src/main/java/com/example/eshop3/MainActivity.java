@@ -24,9 +24,6 @@ public class MainActivity extends AppCompatActivity implements Agora_fragment.On
      public static FragmentManager fragmentManager;
      public EditText e1;
 
-
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

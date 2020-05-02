@@ -19,7 +19,6 @@ public class Kalathi extends Fragment  {
     TextView k3,k4,k5,k6;
     Button k7;
 
-
     public Kalathi() {
         // Required empty public constructor
     }
@@ -41,15 +40,68 @@ public class Kalathi extends Fragment  {
         k7.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                int pwl_id = 0;
+                try {
+                    pwl_id = Integer.parseInt(k1.getText().toString());
+                } catch (NumberFormatException ex) {
+                    System.out.println("Could not parse" + ex);
+                }
 
-            }
-        });
+                String pwl_name = k2.getText().toString();
 
+                int pwlA = 0;
+                try {
+                    pwlA = Integer.parseInt(k3.getText().toString());
+                } catch (NumberFormatException ex) {
+                    System.out.println("Could not parse" + ex);
+                }
 
+                int pwlB = 0;
+                try {
+                    pwlB = Integer.parseInt(k4.getText().toString());
+                } catch (NumberFormatException ex) {
+                    System.out.println("Could not parse" + ex);
+                }
 
+                int pwlC = 0;
+                try {
+                    pwlC = Integer.parseInt(k5.getText().toString());
+                } catch (NumberFormatException ex) {
+                    System.out.println("Could not parse" + ex);
+                }
 
-
-
+                int pwlD = 0;
+                try {
+                    pwlD = Integer.parseInt(k6.getText().toString());
+                } catch (NumberFormatException ex) {
+                    System.out.println("Could not parse" + ex);
+                }
+                if (pwl_name.equals("")) {
+                    String m = "Δεν έβαλες όνομα";
+                    Toast.makeText(getActivity(), m, Toast.LENGTH_LONG).show();
+                } else {
+                    try {
+                        Pwliseis pwliseis = new Pwliseis();
+                        pwliseis.setPpid(pwl_id);
+                        pwliseis.setOnoma(pwl_name);
+                        pwliseis.setPosoA(pwlA);
+                        pwliseis.setPosoB(pwlB);
+                        pwliseis.setPosoC(pwlC);
+                        pwliseis.setPososD(pwlD);
+                        MainActivity.myAppDatabase.myDao().addPwliseis(pwliseis);
+                        Toast.makeText(getActivity(), "Όλα καλά", Toast.LENGTH_LONG).show();
+                    } catch (Exception e) {
+                        String message = e.getMessage();
+                        Toast.makeText(getActivity(), message, Toast.LENGTH_LONG).show();
+                    }
+                    k1.setText("");
+                    k2.setText("");
+                    k3.setText("");
+                    k4.setText("");
+                    k5.setText("");
+                    k6.setText("");
+                }
+            }});
         return view;
     }
 

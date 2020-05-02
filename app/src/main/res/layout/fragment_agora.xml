@@ -69,7 +69,7 @@
                 android:layout_gravity="center"
                 android:layout_marginTop="15dp"
                 android:text="0"
-                android:inputType="numberSigned">
+                android:inputType="number">
             </EditText>
             <Button
                 android:id="@+id/prosthikiA"
