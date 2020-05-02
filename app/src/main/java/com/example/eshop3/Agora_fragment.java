@@ -55,7 +55,7 @@ public class Agora_fragment extends Fragment {
                 String d = p4.getText().toString();
                 String[] k = {a, b, c, d};
 
-                //v.getId()
+                
                 switch (v.getId()){
                     case R.id.prosthikiA:
                         Toast.makeText(getActivity(), "Έγινε η προσθήκη στο καλάθι", Toast.LENGTH_LONG).show();
