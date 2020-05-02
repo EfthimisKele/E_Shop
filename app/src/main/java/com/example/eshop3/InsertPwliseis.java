@@ -11,6 +11,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import java.util.List;
+
 public class InsertPwliseis extends Fragment {
 
     EditText e1,e2,e3,e4,e5,e6;
@@ -75,6 +77,63 @@ public class InsertPwliseis extends Fragment {
                     Toast.makeText(getActivity(), m, Toast.LENGTH_LONG).show();
                 } else {
                     try {
+                        List<Proionta> proionta1 = MainActivity.myAppDatabase.myDao().getProionta();
+                        for (Proionta i: proionta1) {
+                            Integer p_id = i.getPid();
+                            Integer posotita = i.getPosotita();
+                            Integer xronologia = i.getXronologia();
+                            Integer timi = i.getTimi();
+                            Integer diafora = 0;
+                            if (p_id == 1) {
+                                diafora = (posotita - pwlA);
+                                if (diafora >= 0 ) {
+                                    Proionta proionta = new Proionta();
+                                    proionta.setPid(p_id);
+                                    proionta.setPosotita(diafora);
+                                    proionta.setXronologia(xronologia);
+                                    proionta.setTimi(timi);
+                                    MainActivity.myAppDatabase.myDao().updateProion(proionta);
+                                }else{
+                                    throw new Exception("Δεν υπάρχει τόσο απόθεμα στο προϊόν Α");
+                                }
+                            }else if (p_id == 2){
+                                diafora = (posotita - pwlB);
+                                if (diafora >= 0 ) {
+                                    Proionta proionta = new Proionta();
+                                    proionta.setPid(p_id);
+                                    proionta.setPosotita(diafora);
+                                    proionta.setXronologia(xronologia);
+                                    proionta.setTimi(timi);
+                                    MainActivity.myAppDatabase.myDao().updateProion(proionta);
+                                }else{
+                                    throw new Exception();
+                                }
+                            }else if (p_id == 3){
+                                diafora = (posotita - pwlC);
+                                if (diafora >= 0 ) {
+                                    Proionta proionta = new Proionta();
+                                    proionta.setPid(p_id);
+                                    proionta.setPosotita(diafora);
+                                    proionta.setXronologia(xronologia);
+                                    proionta.setTimi(timi);
+                                    MainActivity.myAppDatabase.myDao().updateProion(proionta);
+                                }else{
+                                    throw new Exception("Δεν υπάρχει τόσο απόθεμα στο προϊόν C");
+                                }
+                            }else if (p_id == 4){
+                                diafora = (posotita - pwlD);
+                                if (diafora >= 0 ) {
+                                    Proionta proionta = new Proionta();
+                                    proionta.setPid(p_id);
+                                    proionta.setPosotita(diafora);
+                                    proionta.setXronologia(xronologia);
+                                    proionta.setTimi(timi);
+                                    MainActivity.myAppDatabase.myDao().updateProion(proionta);
+                                }else{
+                                    throw new Exception("Δεν υπάρχει τόσο απόθεμα στο προϊόν Δ");
+                                }
+                            }
+                        }
                         Pwliseis pwliseis = new Pwliseis();
                         pwliseis.setPpid(pwl_id);
                         pwliseis.setOnoma(pwl_name);
@@ -88,6 +147,7 @@ public class InsertPwliseis extends Fragment {
                         String message = e.getMessage();
                         Toast.makeText(getActivity(), message, Toast.LENGTH_LONG).show();
                     }
+                    //Στο τελος αδειαζω τα EditText
                     e1.setText("");
                     e2.setText("");
                     e3.setText("");
@@ -95,7 +155,7 @@ public class InsertPwliseis extends Fragment {
                     e5.setText("");
                     e6.setText("");
                 }
-            }});
+                }});
         return view;
     }
 }

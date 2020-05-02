@@ -13,6 +13,8 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.List;
+
 public class Kalathi extends Fragment  {
 
     EditText k1,k2,a1,a2,a3,a4;
@@ -46,7 +48,6 @@ public class Kalathi extends Fragment  {
                 } catch (NumberFormatException ex) {
                     System.out.println("Could not parse" + ex);
                 }
-
                 String pwl_name = k2.getText().toString();
 
                 int pwlA = 0;
@@ -55,21 +56,18 @@ public class Kalathi extends Fragment  {
                 } catch (NumberFormatException ex) {
                     System.out.println("Could not parse" + ex);
                 }
-
                 int pwlB = 0;
                 try {
                     pwlB = Integer.parseInt(k4.getText().toString());
                 } catch (NumberFormatException ex) {
                     System.out.println("Could not parse" + ex);
                 }
-
                 int pwlC = 0;
                 try {
                     pwlC = Integer.parseInt(k5.getText().toString());
                 } catch (NumberFormatException ex) {
                     System.out.println("Could not parse" + ex);
                 }
-
                 int pwlD = 0;
                 try {
                     pwlD = Integer.parseInt(k6.getText().toString());
@@ -81,6 +79,63 @@ public class Kalathi extends Fragment  {
                     Toast.makeText(getActivity(), m, Toast.LENGTH_LONG).show();
                 } else {
                     try {
+                        List<Proionta> proionta1 = MainActivity.myAppDatabase.myDao().getProionta();
+                        for (Proionta i: proionta1) {
+                            Integer p_id = i.getPid();
+                            Integer posotita = i.getPosotita();
+                            Integer xronologia = i.getXronologia();
+                            Integer timi = i.getTimi();
+                            Integer diafora = 0;
+                            if (p_id == 1) {
+                                diafora = (posotita - pwlA);
+                                if (diafora >= 0 ) {
+                                    Proionta proionta = new Proionta();
+                                    proionta.setPid(p_id);
+                                    proionta.setPosotita(diafora);
+                                    proionta.setXronologia(xronologia);
+                                    proionta.setTimi(timi);
+                                    MainActivity.myAppDatabase.myDao().updateProion(proionta);
+                                }else{
+                                    throw new Exception("Δεν υπάρχει τόσο απόθεμα στο προϊόν Α");
+                                }
+                            }else if (p_id == 2){
+                                diafora = (posotita - pwlB);
+                                if (diafora >= 0 ) {
+                                    Proionta proionta = new Proionta();
+                                    proionta.setPid(p_id);
+                                    proionta.setPosotita(diafora);
+                                    proionta.setXronologia(xronologia);
+                                    proionta.setTimi(timi);
+                                    MainActivity.myAppDatabase.myDao().updateProion(proionta);
+                                }else{
+                                    throw new Exception();
+                                }
+                            }else if (p_id == 3){
+                                diafora = (posotita - pwlC);
+                                if (diafora >= 0 ) {
+                                    Proionta proionta = new Proionta();
+                                    proionta.setPid(p_id);
+                                    proionta.setPosotita(diafora);
+                                    proionta.setXronologia(xronologia);
+                                    proionta.setTimi(timi);
+                                    MainActivity.myAppDatabase.myDao().updateProion(proionta);
+                                }else{
+                                    throw new Exception("Δεν υπάρχει τόσο απόθεμα στο προϊόν C");
+                                }
+                            }else if (p_id == 4){
+                                diafora = (posotita - pwlD);
+                                if (diafora >= 0 ) {
+                                    Proionta proionta = new Proionta();
+                                    proionta.setPid(p_id);
+                                    proionta.setPosotita(diafora);
+                                    proionta.setXronologia(xronologia);
+                                    proionta.setTimi(timi);
+                                    MainActivity.myAppDatabase.myDao().updateProion(proionta);
+                                }else{
+                                    throw new Exception("Δεν υπάρχει τόσο απόθεμα στο προϊόν Δ");
+                                }
+                            }
+                        }
                         Pwliseis pwliseis = new Pwliseis();
                         pwliseis.setPpid(pwl_id);
                         pwliseis.setOnoma(pwl_name);
@@ -94,6 +149,7 @@ public class Kalathi extends Fragment  {
                         String message = e.getMessage();
                         Toast.makeText(getActivity(), message, Toast.LENGTH_LONG).show();
                     }
+                    //Στο τελος αδειαζω τα TextView
                     k1.setText("");
                     k2.setText("");
                     k3.setText("");

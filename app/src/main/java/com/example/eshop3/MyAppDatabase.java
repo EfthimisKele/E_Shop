@@ -5,7 +5,7 @@ import androidx.room.RoomDatabase;
 
 import com.example.eshop3.Pelates;
 
-@Database(entities = {Pelates.class, Proionta.class, Pwliseis.class}, version = 1)
+@Database(entities = {Pelates.class, Proionta.class, Pwliseis.class}, version = 1, exportSchema = false)
 
 public abstract class MyAppDatabase extends RoomDatabase  {
     public abstract MyDao myDao();
