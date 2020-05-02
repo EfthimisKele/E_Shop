@@ -1,2 +1,2 @@
 # E_Shop
-This is an e-shop example in android using Android Studio
+This is a basic e-shop example in beginner level in android using Android Studio
