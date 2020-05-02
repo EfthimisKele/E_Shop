@@ -44,14 +44,15 @@
         android:layout_marginTop="10dp"
         android:layout_marginLeft="5dp">
     </TextView>
-    <TextView
+    <EditText
         android:id="@+id/proionA"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="0"
         android:textSize="20dp"
         android:ems="10">
-    </TextView>
+    </EditText>
+
     //B
     <TextView
         android:layout_width="match_parent"
@@ -62,14 +63,14 @@
         android:layout_marginTop="10dp"
         android:layout_marginLeft="5dp">
     </TextView>
-    <TextView
+    <EditText
         android:id="@+id/proionB"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="0"
         android:textSize="20dp"
         android:ems="10">
-    </TextView>
+    </EditText>
 
     //C
     <TextView
@@ -81,14 +82,14 @@
         android:layout_marginTop="10dp"
         android:layout_marginLeft="5dp">
     </TextView>
-    <TextView
+    <EditText
         android:id="@+id/proionC"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="0"
         android:textSize="20dp"
         android:ems="10">
-    </TextView>
+    </EditText>
 
     //D
     <TextView
@@ -100,14 +101,14 @@
         android:layout_marginTop="10dp"
         android:layout_marginLeft="5dp">
     </TextView>
-    <TextView
+    <EditText
         android:id="@+id/proionD"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="0"
         android:textSize="20dp"
         android:ems="10">
-    </TextView>
+    </EditText>
 
     <Button
         android:id="@+id/submit_Kalathi_agora"

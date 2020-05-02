@@ -17,10 +17,8 @@ import java.util.List;
 
 public class Kalathi extends Fragment  {
 
-    EditText k1,k2,a1,a2,a3,a4;
-    TextView k3,k4,k5,k6;
+    EditText k1,k2,k3,k4,k5,k6;
     Button k7;
-
     public Kalathi() {
         // Required empty public constructor
     }
@@ -36,9 +34,13 @@ public class Kalathi extends Fragment  {
         k5 = view.findViewById(R.id.proionC);
         k6 = view.findViewById(R.id.proionD);
         k7 = view.findViewById(R.id.submit_Kalathi_agora);
+
         Bundle bundle = getArguments();
-//        String m = bundle.getString("m");
-       // k3.setText(m);
+        String m[] = bundle.getStringArray("tra");
+        k3.setText(m[0]);
+        k4.setText(m[1]);
+        k5.setText(m[2]);
+        k6.setText(m[3]);
         k7.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

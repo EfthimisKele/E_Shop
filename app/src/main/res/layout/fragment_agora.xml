@@ -68,6 +68,7 @@
                 android:textAlignment="center"
                 android:layout_gravity="center"
                 android:layout_marginTop="15dp"
+                android:ems="10"
                 android:text="0"
                 android:inputType="number">
             </EditText>
@@ -120,6 +121,7 @@
             android:layout_gravity="center"
             android:layout_marginTop="15dp"
             android:text="0"
+            android:ems="10"
             android:inputType="number"
             >
         </EditText>
@@ -173,6 +175,7 @@
         android:layout_gravity="center"
         android:layout_marginTop="15dp"
         android:text="0"
+        android:ems="10"
         android:inputType="number">
     </EditText>
     <Button
@@ -202,7 +205,6 @@
                 android:layout_height="324dp"
                 android:layout_gravity="center"
                 android:src="@drawable/laptop4">
-
             </ImageView>
 
             <TextView
@@ -229,6 +231,7 @@
                 android:layout_gravity="center"
                 android:layout_marginTop="15dp"
                 android:text="0"
+                android:ems="10"
                 android:inputType="number"
                 >
             </EditText>

@@ -93,10 +93,10 @@ public class MainActivity extends AppCompatActivity implements Agora_fragment.On
             }
         });
     }
-        public void onMessageSend (String m){
+        public void onMessageSend(String[] m){
             Kalathi kalathi = new Kalathi();
             Bundle bundle = new Bundle();
-            bundle.putString("m", m);
+            bundle.putStringArray("tra", m);
             kalathi.setArguments(bundle);
             FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, kalathi, null);
             fragmentTransaction.addToBackStack(null);
