@@ -50,12 +50,11 @@ public class Agora_fragment extends Fragment implements View.OnClickListener {
 
     @Override
     public void onClick(View v) {
-        final EditText p1;
-        final String m1;
-        p1 = v.findViewById(R.id.textproionA);
-        p1.setOnClickListener(this);
+       // final EditText p1;
+       // final String m1;
+      //  p1 = v.findViewById(R.id.textproionA);
 
-        m1 = p1.getText().toString();
+       // m1 = p1.getText().toString();
 
         switch (v.getId()){
             case R.id.prosthikiA:
@@ -71,7 +70,7 @@ public class Agora_fragment extends Fragment implements View.OnClickListener {
                 Toast.makeText(getActivity(), "Έγινε η προσθήκη στο καλάθι", Toast.LENGTH_LONG).show();
                 break;
             case R.id.submit_kalathi:
-                messageSendListener.onMessageSend("m");
+             //   messageSendListener.onMessageSend("m");
                 MainActivity.fragmentManager.beginTransaction().replace(R.id.fragment_container, new Kalathi()).addToBackStack(null).commit();
                 break;
         }

@@ -37,8 +37,8 @@ public class Kalathi extends Fragment  {
         k6 = view.findViewById(R.id.proionD);
         k7 = view.findViewById(R.id.submit_Kalathi_agora);
         Bundle bundle = getArguments();
-        String m = bundle.getString("m");
-        k3.setText(m);
+//        String m = bundle.getString("m");
+       // k3.setText(m);
         k7.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
