@@ -58,14 +58,14 @@ public class QueryFragment extends Fragment {
                 String result="";
                 switch (test){
                     case 1:
-                        //Παιρνω μια λιστα απο ακαιρεους για αυτο και ResultInt
+                        //Παιρνω μια λιστα απο ακαιρεους για αυτο και ResultInt integers
                         //Ετσι με μια αναζητηση και αναλογα το id βρισκω το απόθεμα για κάθε
                         //προιον ξεχωριστα, το ιδιο ισχυει για case 1,2,3,4
                         List<ResultInt> integers = MainActivity.myAppDatabase.myDao().getQuery1();
                         for (ResultInt i: integers) {
                             Integer p_id = i.getField1();
                             Integer posotita = i.getField2();
-                            if (p_id==1){
+                            if (p_id == 1){
                                 result = result + "\n Το απόθεμα είναι: " + posotita;
                             }
                         }
@@ -76,7 +76,7 @@ public class QueryFragment extends Fragment {
                         for (ResultInt i: integers1) {
                             Integer p_id = i.getField1();
                             Integer posotita = i.getField2();
-                            if (p_id==2){
+                            if (p_id == 2){
                                 result = result + "\n Το απόθεμα είναι: " + posotita;
                             }
                         }
@@ -87,7 +87,7 @@ public class QueryFragment extends Fragment {
                         for (ResultInt i: integers2) {
                             Integer p_id = i.getField1();
                             Integer posotita = i.getField2();
-                            if (p_id==3){
+                            if (p_id == 3){
                                 result = result + "\n Το απόθεμα είναι: " + posotita;
                             }
                         }
@@ -112,7 +112,7 @@ public class QueryFragment extends Fragment {
                             Integer A = i.getPosoA();
                             Integer B = i.getPosoB();
                             Integer C = i.getPosoC();
-                            Integer D = i.getPososD();
+                            Integer D = i.getPosoD();
                             result = result + "\n Id:" + id + "\n Όνομα:" + name + "\n Πλήθος προϊόν Α:" + A + "\n Πλήθος προϊόν Β:" + B + "\n Πλήθος προϊόν C:" + C + "\n Πλήθος προϊόν D:" + D;
                         }
                         querytextresult.setText(result);
@@ -150,7 +150,7 @@ public class QueryFragment extends Fragment {
                         List<Pwliseis> pwliseis5 = MainActivity.myAppDatabase.myDao().getPwliseis();
                         int sum3 = 0;
                         for (Pwliseis i: pwliseis5) {
-                            sum3 = sum3 + i.getPososD();
+                            sum3 = sum3 + i.getPosoD();
                         }
                         result = result + "\n Οι συνολικές πωλήσεις είναι " + sum3;
                         querytextresult.setText(result);

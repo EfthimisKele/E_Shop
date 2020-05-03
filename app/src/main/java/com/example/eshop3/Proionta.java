@@ -5,6 +5,9 @@ import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
+//Δημιουργω τον πινακα Proionta με τις στήλες pid,posotita,proionta_xronologia,proionta_timi
+//Κυριω κλειδι ειναι το pid το οποίο δε μπορεί να είναι null. Επισης δημιουργώ τα Setter και
+//τα Getter για τη κάθε στήλη
 @Entity(tableName = "proionta")
 public class Proionta {
     @PrimaryKey @ColumnInfo ( name = "p_id") @NonNull

@@ -1,6 +1,10 @@
 <menu
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    //Δημιουργία menu με 7 items τα οποία τα έχω βάλει στο ίδιο group
+    //κάθε item έχει το δικό του id και του έχω βάλει το ανάλογο icon που
+    //βρίσκονται στο res/drawable
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/home"

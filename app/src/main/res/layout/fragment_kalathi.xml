@@ -6,6 +6,8 @@
     android:orientation="vertical"
     tools:context=".Kalathi">
 
+
+
     <TextView
         android:id="@+id/txtKalathi"
         android:layout_width="match_parent"
@@ -16,24 +18,6 @@
         android:textAlignment="center"
         android:textSize="25dp"
         android:textStyle="bold" />
-
-    <EditText
-        android:id="@+id/edit_kalathi"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="number"
-        android:hint="Δώσε id">
-    </EditText>
-
-    <EditText
-        android:id="@+id/edit_kalathi2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:hint="Δώσε όνομα">
-    </EditText>
 
     <TextView
         android:layout_width="match_parent"
@@ -110,15 +94,30 @@
         android:ems="10">
     </EditText>
 
+    <EditText
+        android:id="@+id/edit_kalathi"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="number"
+        android:hint="Δώσε id">
+    </EditText>
+
+    <EditText
+        android:id="@+id/edit_kalathi2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:hint="Δώσε όνομα">
+    </EditText>
+
     <Button
         android:id="@+id/submit_Kalathi_agora"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Ολοκλήρωη παραγγελίας"
+        android:text="Ολοκλήρωση παραγγελίας"
         android:layout_gravity="center"
         >
     </Button>
-
-
-
 </LinearLayout>

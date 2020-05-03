@@ -5,6 +5,10 @@ import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
+//Δημιουργω τον πινακα Pelates με τις στήλες id,name,surname,poli
+//Κυριω κλειδι ειναι το id στο οποιο οπως και στα αλλα πεδια
+// δε μπορεί να ειναι Null. Επισης δημιουργω Setter και Getter για κάθε
+//στήλη
 @Entity (tableName = "pelates" )
 public class Pelates {
     @PrimaryKey  @ColumnInfo( name = "pid") @NonNull

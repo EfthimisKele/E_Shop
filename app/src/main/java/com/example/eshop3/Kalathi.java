@@ -77,7 +77,7 @@ public class Kalathi extends Fragment  {
                     System.out.println("Could not parse" + ex);
                 }
                 if (pwl_name.equals("")) {
-                    String m = "Δεν έβαλες όνομα";
+                    String m = "Δεν έβαλες κάποιο πεδίο";
                     Toast.makeText(getActivity(), m, Toast.LENGTH_LONG).show();
                 } else {
                     try {
@@ -144,7 +144,7 @@ public class Kalathi extends Fragment  {
                         pwliseis.setPosoA(pwlA);
                         pwliseis.setPosoB(pwlB);
                         pwliseis.setPosoC(pwlC);
-                        pwliseis.setPososD(pwlD);
+                        pwliseis.setPosoD(pwlD);
                         MainActivity.myAppDatabase.myDao().addPwliseis(pwliseis);
                         Toast.makeText(getActivity(), "Όλα καλά", Toast.LENGTH_LONG).show();
                     } catch (Exception e) {

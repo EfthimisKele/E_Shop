@@ -6,11 +6,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#B1E6F6"
-
     tools:context=".about_fragment">
-
+// ξανά constraintLayout ώστε να δώσω τις κατάλληλες συντεταγμένες στο TextView που θα εμφανίζω
+// στο οποίο έχω δώσει ένα αυτό το γαλάζιο χρώμα. Το textView ,έπειτα από τα κατάλληλα margin
+// ισαπέχει από όλες τις πλευρές, το style είναι bold, χρώμα μάυρο
     <TextView
-
         android:id="@+id/txt_about_message"
         android:layout_width="0dp"
         android:layout_height="wrap_content"

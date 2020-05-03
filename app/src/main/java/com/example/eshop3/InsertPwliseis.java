@@ -140,7 +140,7 @@ public class InsertPwliseis extends Fragment {
                         pwliseis.setPosoA(pwlA);
                         pwliseis.setPosoB(pwlB);
                         pwliseis.setPosoC(pwlC);
-                        pwliseis.setPososD(pwlD);
+                        pwliseis.setPosoD(pwlD);
                         MainActivity.myAppDatabase.myDao().addPwliseis(pwliseis);
                         Toast.makeText(getActivity(), "Όλα καλά", Toast.LENGTH_LONG).show();
                     } catch (Exception e) {

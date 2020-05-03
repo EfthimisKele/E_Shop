@@ -25,6 +25,7 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
+
 //Εκανα εισαγωγή
     implementation 'com.google.android.material:material:1.0.0'
 //Έκανα εισαγωγή

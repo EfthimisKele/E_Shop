@@ -6,8 +6,14 @@ import androidx.room.Entity;
 import androidx.room.ForeignKey;
 import androidx.room.PrimaryKey;
 
+/* Δημιορυγώ τον πίνακα Pwliseis με τις στήλες pwlid,pwl_onoma,posoA,posoB,posoC,posoD
+Κυριως κλειδι είναι ένας συνδιασμός όλων των στειλών του πίνακα. Το ξένο κλειδί
+βρίσκεται στη κλάση Pelates και κάνω αντιστόιχηση το pid εκείνης της κλάσης
+με το pwlid αυτης της κλασης., επισης εισάγωγω την onDelete και onUpdate.Cascade.Δηλαδή
+τι θα γίνει σε περίπτωση διαγρφής ή ενημέρωσης στον πίνακα Πελάτες
+ */
 @Entity (tableName = "pwliseis",
-primaryKeys = {"pwlid","pwl_onoma","posoA","posoB","posoC","posoD"},
+primaryKeys = {"pwlid","pwl_onoma","posoA"},
         foreignKeys = {
         @ForeignKey(entity = Pelates.class,
         parentColumns = "pid",
@@ -32,7 +38,7 @@ public class Pwliseis {
     private int posoC;
 
     @ColumnInfo (name = "posoD")
-    private int pososD;
+    private int posoD;
 
     public int getPpid() {
         return ppid;
@@ -74,11 +80,11 @@ public class Pwliseis {
         this.posoC = posoC;
     }
 
-    public int getPososD() {
-        return pososD;
+    public int getPosoD() {
+        return posoD;
     }
 
-    public void setPososD(int pososD) {
-        this.pososD = pososD;
+    public void setPosoD(int posoD) {
+        this.posoD = posoD;
     }
 }

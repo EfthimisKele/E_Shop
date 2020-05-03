@@ -7,6 +7,10 @@
     android:orientation="vertical"
     tools:context=".DeletePelates">
 
+    //LinearLayout που περιέχει ένα TextView ένα EditText και ένα κουμπί
+    //Στο id ο χρήστης θα βάζει το id του λογαριασμού που θέλει να διαγράψει και
+    //θα πατάει το κουμπί
+
     <TextView
         android:id="@+id/txtDelete"
         android:layout_width="match_parent"

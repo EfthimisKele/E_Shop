@@ -1,5 +1,8 @@
 package com.example.eshop3;
 
+//Δημιουργώ αυτή τη κλάση με 2 μεταβλητές τύπου Integer μαζί μετα Setter και Getter τους
+// γιατί θα τις χρησιμοποίησω στο Interface MyDao.
+
 public class ResultInt {
     int field1, field2;
 

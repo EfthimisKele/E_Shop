@@ -46,6 +46,7 @@ public class UpdatePelates extends Fragment {
                 String Var_name = update_text2.getText().toString();
                 String Var_surname = update_text3.getText().toString();
                 String Var_poli = update_text4.getText().toString();
+
                 Pelates pelates = new Pelates();
                 pelates.setId(Var_id);
                 pelates.setName(Var_name);

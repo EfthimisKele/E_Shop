@@ -11,6 +11,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import java.util.List;
+
 
 public class UpdatePwliseis extends Fragment {
 
@@ -50,7 +52,6 @@ public class UpdatePwliseis extends Fragment {
                 } catch (NumberFormatException ex){
                     System.out.println("Could not parse" + ex);
                 }
-
                 int pwlB = 0;
                 try {
                     pwlB = Integer.parseInt(e4.getText().toString());
@@ -71,27 +72,203 @@ public class UpdatePwliseis extends Fragment {
                 } catch (NumberFormatException ex){
                     System.out.println("Could not parse" + ex);
                 }
-                try {
-                    Pwliseis pwliseis = new Pwliseis();
-                    pwliseis.setPpid(Var_prid);
-                    pwliseis.setOnoma(pwl_name);
-                    pwliseis.setPosoA(pwlA);
-                    pwliseis.setPosoB(pwlB);
-                    pwliseis.setPosoC(pwlC);
-                    pwliseis.setPososD(pwlD);
-                    MainActivity.myAppDatabase.myDao().updatePwliseis(pwliseis);
-                    Toast.makeText(getActivity(), "Όλα καλά", Toast.LENGTH_LONG).show();
-                }catch (Exception e){
-                    String message = e.getMessage();
-                    Toast.makeText(getActivity(),message,Toast.LENGTH_LONG).show();
-                }
-                e1.setText("");
-                e2.setText("");
-                e3.setText("");
-                e4.setText("");
-                e5.setText("");
-                e6.setText("");
-            }
+                if (pwl_name.equals("")) {
+                    String m = "Δεν έβαλες όνομα";
+                    Toast.makeText(getActivity(), m, Toast.LENGTH_LONG).show();
+                } else {
+                    try {
+                        List<Proionta> proionta1 = MainActivity.myAppDatabase.myDao().getProionta();
+                        List<Pwliseis> pwliseis1 = MainActivity.myAppDatabase.myDao().getPwliseis();
+                        for (Pwliseis l :pwliseis1) {
+                            if (pwl_name.equals(l.getOnoma()) & Var_prid == l.getPpid()) {
+                                for (Proionta i : proionta1) {
+                                    Integer p_id = i.getPid();
+                                    Integer posotita = i.getPosotita();
+                                    Integer xronologia = i.getXronologia();
+                                    Integer timi = i.getTimi();
+                                    Integer diafora = 0;
+                                    Integer diafora2 = 0;
+                                    if (p_id == 1) {
+                                        if (pwlA > l.getPosoA()) {
+                                            diafora2 = pwlA - l.getPosoA();
+                                            diafora = (posotita - diafora2);
+                                            if (diafora >= 0) {
+                                                Proionta proionta = new Proionta();
+                                                proionta.setPid(p_id);
+                                                proionta.setPosotita(diafora);
+                                                proionta.setXronologia(xronologia);
+                                                proionta.setTimi(timi);
+                                                MainActivity.myAppDatabase.myDao().updateProion(proionta);
+                                            } else {
+                                                throw new Exception("Δεν υπάρχει τόσο απόθεμα στο προϊόν Α");
+                                            }
+                                        }else if (pwlA < l.getPosoA()){
+                                            diafora2 = l.getPosoA() - pwlA;
+                                            diafora = (posotita + diafora2);
+                                            if (diafora >= 0) {
+                                                Proionta proionta = new Proionta();
+                                                proionta.setPid(p_id);
+                                                proionta.setPosotita(diafora);
+                                                proionta.setXronologia(xronologia);
+                                                proionta.setTimi(timi);
+                                                MainActivity.myAppDatabase.myDao().updateProion(proionta);
+                                            } else {
+                                                throw new Exception("Δεν υπάρχει τόσο απόθεμα στο προϊόν Α");
+                                            }
+                                        } else if ( pwlA == l.getPosoA()) {
+                                            if (diafora >= 0) {
+                                                Proionta proionta = new Proionta();
+                                                proionta.setPid(p_id);
+                                                proionta.setPosotita(posotita);
+                                                proionta.setXronologia(xronologia);
+                                                proionta.setTimi(timi);
+                                                MainActivity.myAppDatabase.myDao().updateProion(proionta);
+                                            } else {
+                                                throw new Exception("Δεν υπάρχει τόσο απόθεμα στο προϊόν Α");
+                                            }
+                                        }
+                                    } else if (p_id == 2) {
+                                        if (pwlB > l.getPosoB()){
+                                            diafora2 = pwlB - l.getPosoB();
+                                            diafora = (posotita - diafora2);
+                                            if (diafora >= 0) {
+                                                Proionta proionta = new Proionta();
+                                                proionta.setPid(p_id);
+                                                proionta.setPosotita(diafora);
+                                                proionta.setXronologia(xronologia);
+                                                proionta.setTimi(timi);
+                                                MainActivity.myAppDatabase.myDao().updateProion(proionta);
+                                            } else {
+                                                throw new Exception("Δεν υπάρχει τόσο απόθεμα στο προϊόν B");
+                                            }
+                                        }else if (pwlB < l.getPosoB()){
+                                            diafora2 = l.getPosoB() - pwlB;
+                                            diafora = (posotita + diafora2);
+                                            if (diafora >= 0) {
+                                                Proionta proionta = new Proionta();
+                                                proionta.setPid(p_id);
+                                                proionta.setPosotita(diafora);
+                                                proionta.setXronologia(xronologia);
+                                                proionta.setTimi(timi);
+                                                MainActivity.myAppDatabase.myDao().updateProion(proionta);
+                                            } else {
+                                                throw new Exception("Δεν υπάρχει τόσο απόθεμα στο προϊόν B");
+                                            }
+                                        }else {
+                                            if (diafora >= 0) {
+                                                Proionta proionta = new Proionta();
+                                                proionta.setPid(p_id);
+                                                proionta.setPosotita(posotita);
+                                                proionta.setXronologia(xronologia);
+                                                proionta.setTimi(timi);
+                                                MainActivity.myAppDatabase.myDao().updateProion(proionta);
+                                            } else {
+                                                throw new Exception("Δεν υπάρχει τόσο απόθεμα στο προϊόν B");
+                                            }
+                                        }
+                                    } else if (p_id == 3) {
+                                        if(pwlC > l.getPosoC()){
+                                            diafora2 = pwlC - l.getPosoC();
+                                            diafora = (posotita - diafora2);
+                                            if (diafora >= 0) {
+                                                Proionta proionta = new Proionta();
+                                                proionta.setPid(p_id);
+                                                proionta.setPosotita(diafora);
+                                                proionta.setXronologia(xronologia);
+                                                proionta.setTimi(timi);
+                                                MainActivity.myAppDatabase.myDao().updateProion(proionta);
+                                            } else {
+                                                throw new Exception("Δεν υπάρχει τόσο απόθεμα στο προϊόν C");
+                                            }
+                                        }else if (pwlC < l.getPosoC()){
+                                            diafora2 = pwlC - l.getPosoC();
+                                            diafora = (posotita + diafora2);
+                                            if (diafora >= 0) {
+                                                Proionta proionta = new Proionta();
+                                                proionta.setPid(p_id);
+                                                proionta.setPosotita(diafora);
+                                                proionta.setXronologia(xronologia);
+                                                proionta.setTimi(timi);
+                                                MainActivity.myAppDatabase.myDao().updateProion(proionta);
+                                            } else {
+                                                throw new Exception("Δεν υπάρχει τόσο απόθεμα στο προϊόν C");
+                                            }
+                                        }else {
+                                            if (diafora >= 0) {
+                                                Proionta proionta = new Proionta();
+                                                proionta.setPid(p_id);
+                                                proionta.setPosotita(posotita);
+                                                proionta.setXronologia(xronologia);
+                                                proionta.setTimi(timi);
+                                                MainActivity.myAppDatabase.myDao().updateProion(proionta);
+                                            } else {
+                                                throw new Exception("Δεν υπάρχει τόσο απόθεμα στο προϊόν C");
+                                            }
+                                        }
+                                    } else if (p_id == 4) {
+                                        if (pwlD > l.getPosoD()) {
+                                            diafora2 = pwlD - l.getPosoD();
+                                            diafora = (posotita - diafora2);
+                                            if (diafora >= 0) {
+                                                Proionta proionta = new Proionta();
+                                                proionta.setPid(p_id);
+                                                proionta.setPosotita(diafora);
+                                                proionta.setXronologia(xronologia);
+                                                proionta.setTimi(timi);
+                                                MainActivity.myAppDatabase.myDao().updateProion(proionta);
+                                            } else {
+                                                throw new Exception("Δεν υπάρχει τόσο απόθεμα στο προϊόν D");
+                                            }
+                                        }else if (pwlD < l.getPosoD()){
+                                            diafora2 = l.getPosoD() - pwlD;
+                                            diafora = (posotita + diafora2);
+                                            if (diafora >= 0) {
+                                                Proionta proionta = new Proionta();
+                                                proionta.setPid(p_id);
+                                                proionta.setPosotita(diafora);
+                                                proionta.setXronologia(xronologia);
+                                                proionta.setTimi(timi);
+                                                MainActivity.myAppDatabase.myDao().updateProion(proionta);
+                                            } else {
+                                                throw new Exception("Δεν υπάρχει τόσο απόθεμα στο προϊόν D");
+                                            }
+                                        } else {
+                                            if (diafora >= 0) {
+                                                Proionta proionta = new Proionta();
+                                                proionta.setPid(p_id);
+                                                proionta.setPosotita(posotita);
+                                                proionta.setXronologia(xronologia);
+                                                proionta.setTimi(timi);
+                                                MainActivity.myAppDatabase.myDao().updateProion(proionta);
+                                            } else {
+                                                throw new Exception("Δεν υπάρχει τόσο απόθεμα στο προϊόν D");
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        Pwliseis pwliseis = new Pwliseis();
+                        pwliseis.setPpid(Var_prid);
+                        pwliseis.setOnoma(pwl_name);
+                        pwliseis.setPosoA(pwlA);
+                        pwliseis.setPosoB(pwlB);
+                        pwliseis.setPosoC(pwlC);
+                        pwliseis.setPosoD(pwlD);
+                        MainActivity.myAppDatabase.myDao().updatePwliseis(pwliseis);
+                        Toast.makeText(getActivity(), "Όλα καλά", Toast.LENGTH_LONG).show();
+                    } catch (Exception e) {
+                        String message = e.getMessage();
+                        Toast.makeText(getActivity(), message, Toast.LENGTH_LONG).show();
+                    }
+                    //Στο τελος αδειαζω τα EditText
+                    e1.setText("");
+                    e2.setText("");
+                    e3.setText("");
+                    e4.setText("");
+                    e5.setText("");
+                    e6.setText("");
+                }}
         });
         return view;
     }

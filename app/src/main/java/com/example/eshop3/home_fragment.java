@@ -10,18 +10,15 @@ import android.view.ViewGroup;
 
 public class home_fragment extends Fragment {
 
-
+    // το 1ο fragment που θα εμφανίζεται από default , δεν έχει κάτι εδώ
+    //μόνο το layout του
     public home_fragment() {
         // Required empty public constructor
     }
-
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
     }
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {

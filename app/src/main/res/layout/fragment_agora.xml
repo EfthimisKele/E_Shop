@@ -7,16 +7,21 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".Agora_fragment">
-
+// Αρχικα έβαλα ένα ConstraintLayout για να μπορώ να διαμορφώσω κατάλληλα το layout
+// Έπειτα έβαλα ενα ScrollView σε όλο το layout καθώς θέλω ο χρήστης να μπορεί
+// να κάνει scroll μέχρι κάτω
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         >
 
+//Στη συνέχεια χρειάστηκε ένα LinearLayout για να τοποθετήσω τα αντικείμενα μου το
+// το ένα κάτω από το άλλο
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
+//Κουμπί που πάει το χρήστη στο Fragment Kalathi
             <Button
                 android:id="@+id/submit_kalathi"
                 android:layout_width="wrap_content"
@@ -26,12 +31,18 @@
                 android:text="Μεταβίβαση στο καλαθι μου">
             </Button>
 
+//Κάθε προϊόν αποτελείται από 1 TextView που γράφει ΠΡΟΙΟΝ Α,Β,Γ,Δ αντίστοιχα
+// 1 ImagieView με την κατάλληλη εικόνα του laptop, 1 TextView με τη λέξη "Χαρακτηριστικά"
+// 1 TextView που παίρνει τιμή ένα String που έχει δημιουργηθεί στπ res/values/strings.xml
+// το οποίο αποτελείται από μια unorder list(ul). 1 EditText όπου ο χρήστης θα βάζει το πλήθος
+// που θέλει να αγοράσει από αυτο το πρϊόν και τέλος 1 Button που όταν θα το προσθέτει ο χρήστης
+// θα βάζει την από το προηγούμενο EditText στο fragment το καλάθι αντίστοιχα για αυτό το προϊόν.
             //ΠΡΟΙΟΝ Α
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center_horizontal"
-                android:text="ΠΡΟΙΟΝ Α"
+                android:text="ΠΡΟΪΟΝ Α"
                 android:textStyle="bold"
                 android:textSize="30dp"
                 android:textColor="@color/colorPrimary"
@@ -85,7 +96,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center_horizontal"
-            android:text="ΠΡΟΙΟΝ B"
+            android:text="ΠΡΟΪΟΝ B"
             android:textStyle="bold"
             android:textSize="30dp"
             android:textColor="@color/colorPrimary"
@@ -138,7 +149,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center_horizontal"
-        android:text="ΠΡΟΙΟΝ C"
+        android:text="ΠΡΟΪΟΝ C"
         android:textStyle="bold"
         android:textSize="30dp"
         android:textColor="@color/colorPrimary"
@@ -191,7 +202,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center_horizontal"
-                android:text="ΠΡΟΙΟΝ D"
+                android:text="ΠΡΟΪΟΝ D"
                 android:textStyle="bold"
                 android:textSize="30dp"
                 android:textColor="@color/colorPrimary"
