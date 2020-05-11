@@ -7,6 +7,11 @@
     android:orientation="vertical"
     tools:context=".QueryFragment">
 
+    //LinearLayout και μεσα σε αυτο ξανα ενα LinearLayout
+    //εχω ενα spinner που στο αντιχτοιχο fragment δειχνω πως περνει
+    //τις διαφορες τιμες του, αντοιστοιχα και το TextView με την περιγραφη
+    //της ερωτησης. Ενα κουμπί που οταν ο χρηστης θα το παταει θα εκτελειται το query
+    //Στο 2ο LinearLayout το εχω βαλει ScrollView και ενα TextView για την εμφανιση των αποτελεσματων
     <TextView
         android:id="@+id/query_txt"
         android:layout_width="match_parent"
@@ -64,8 +69,4 @@
                 android:textSize="12dp"/>
         </ScrollView>
     </LinearLayout>
-
-
-
-
 </LinearLayout>

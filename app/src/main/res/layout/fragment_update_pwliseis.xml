@@ -7,6 +7,10 @@
     android:orientation="vertical"
     tools:context=".UpdatePwliseis">
 
+
+    //LinearLayout με 6 EditText και ένα κουμπί
+    //Πατωντας ο χρηστης το κουμπί θα παιρνει τις τιμες
+    //απο τα 6 EditText και θα τα τοποθετει στον κατάλληλο πινακα
     <TextView
         android:id="@+id/txtUpdatePwl"
         android:layout_width="match_parent"

@@ -6,8 +6,11 @@
     android:orientation="vertical"
     tools:context=".Kalathi">
 
-
-
+    //LinearLayout το οποιο έχει 5 TextView, 6 EditText
+    //και 1 κουμπί. Τα  4 TextView θα παιρνουν τις τιμές τους
+    //από τα EditText του fragment_agora. Ο χρήστης θα προσθέτει
+    //το ονομα και το id του και πατωντας το κουμπι θα ολοκληρωνεται
+    //η αγορα γινοντας ο καταλληλος ελεγχος στην εισαγωγη του πινακα.
     <TextView
         android:id="@+id/txtKalathi"
         android:layout_width="match_parent"

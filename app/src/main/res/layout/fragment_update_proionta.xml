@@ -7,6 +7,9 @@
     android:orientation="vertical"
     tools:context=".UpdateProionta">
 
+    //LinearLayout με 4 EditText και ένα κουμπί
+    //Πατωντας ο χρηστης το κουμπί θα παιρνει τις τιμες
+    //απο τα 4 EditText και θα τα τοποθετει στον κατάλληλο πινακα
     <TextView
         android:id="@+id/txtUpdatePr"
         android:layout_width="match_parent"

@@ -6,6 +6,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".menu_pelates">
 
+    //ConstraintLayout με 3 κουμπια.
+    //Το καθε κουμπι οδηγεί σε ένα διαφορετικό fragment.
     <Button
         android:id="@+id/insertButton"
         android:layout_width="150dp"
