@@ -6,9 +6,7 @@
     android:orientation="vertical"
     tools:context=".DeletePwliseis">
 
-    //LinearLayout που περιέχει ένα TextView ένα EditText και ένα κουμπί
-    //Στο id ο χρήστης θα βάζει το id του λογαρισμού που έκανε την αγορά και θέλει να διαγράψει και
-    //θα πατάει το κουμπί
+
 
     <TextView
         android:id="@+id/txtDeletePwl"
@@ -22,12 +20,57 @@
         android:textStyle="bold" />
 
     <EditText
-        android:id="@+id/delete_txtPwl"
+        android:id="@+id/del_textPwl1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="number"
+        android:hint="Δώσε id">
+    </EditText>
+
+    <EditText
+        android:id="@+id/del_textPwl2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="textPersonName"
-        android:hint="Δώσε id">
+        android:hint="Δώσε όνομα">
+    </EditText>
+
+    <EditText
+        android:id="@+id/del_textPwl3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="number"
+        android:hint="Δώσε πλήθος προϊόν Α">
+    </EditText>
+
+    <EditText
+        android:id="@+id/del_textPwl4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Δώσε πλήθος προϊόν Β"
+        android:inputType="number">
+    </EditText>
+
+    <EditText
+        android:id="@+id/del_textPwl5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Δώσε πλήθος προϊόν Γ"
+        android:inputType="number">
+    </EditText>
+
+    <EditText
+        android:id="@+id/del_textPwl6"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Δώσε πλήθος προϊόν Δ"
+        android:inputType="number">
     </EditText>
 
     <Button
