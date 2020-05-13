@@ -15,6 +15,7 @@ import java.util.List;
 
 public class InsertPwliseis extends Fragment {
 
+    //ορισμος μεταβλητων
     EditText e1,e2,e3,e4,e5,e6;
     Button submitpwl;
 
@@ -25,6 +26,8 @@ public class InsertPwliseis extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        //δημιουργια view
+        //και αντιστοιχηση μεταβλτηων με τη χρηση findViewById
         View view = inflater.inflate(R.layout.fragment_insert_pwliseis, container, false);
         e1 = view.findViewById(R.id.edit_textPwl1);
         e2 = view.findViewById(R.id.edit_textPwl2);
@@ -36,36 +39,33 @@ public class InsertPwliseis extends Fragment {
         submitpwl.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                //κανοντας parseInt αποθηκευεω τις τιμες των EditText σε μορφη Integer
+                //και toString για το ονομα
                 int pwl_id = 0;
                 try {
                     pwl_id = Integer.parseInt(e1.getText().toString());
                 } catch (NumberFormatException ex) {
                     System.out.println("Could not parse" + ex);
                 }
-
                 String pwl_name = e2.getText().toString();
-
                 int pwlA = 0;
                 try {
                     pwlA = Integer.parseInt(e3.getText().toString());
                 } catch (NumberFormatException ex) {
                     System.out.println("Could not parse" + ex);
                 }
-
                 int pwlB = 0;
                 try {
                     pwlB = Integer.parseInt(e4.getText().toString());
                 } catch (NumberFormatException ex) {
                     System.out.println("Could not parse" + ex);
                 }
-
                 int pwlC = 0;
                 try {
                     pwlC = Integer.parseInt(e5.getText().toString());
                 } catch (NumberFormatException ex) {
                     System.out.println("Could not parse" + ex);
                 }
-
                 int pwlD = 0;
                 try {
                     pwlD = Integer.parseInt(e6.getText().toString());
@@ -77,6 +77,15 @@ public class InsertPwliseis extends Fragment {
                     Toast.makeText(getActivity(), m, Toast.LENGTH_LONG).show();
                 } else {
                     try {
+                        /*
+                        Παιρνω μια λιστα τυπου Προιοντα καθως θα θελω να ελεγχω καθε φορα
+                        αμα το αποθεμα ειναι αρκετο να καλυψει το πληθος που θελει ο χρηστης.
+                        Ετσι στην αρχη για το προιον τυπου Α με p_id=1 , αφου βρω ποσο αποθεμα εχει
+                        κανω μια αφαιρεση με το πληθος που επιθυμει να αγορασει ο χρηστης. Αμα η διαφορα
+                        ειναι θετικη τοτε συνεχιζει ο κωδικας και γινεται ενα update στον πινακα Proionta
+                        καλωντας την updateProion.To ιδιο συμβαινει και για το προιον , τυπου Β,C,D με p_id
+                        2,3,4 αντιστοιχα.
+                         */
                         List<Proionta> proionta1 = MainActivity.myAppDatabase.myDao().getProionta();
                         for (Proionta i: proionta1) {
                             Integer p_id = i.getPid();
@@ -134,6 +143,9 @@ public class InsertPwliseis extends Fragment {
                                 }
                             }
                         }
+                        //αφου εχει ελεγχθει το αποθεμα και εχει ανανεωθει γινεται
+                        //η εγγραφη στον πινακα Pwliseis με τις τιμες που εχει δωσει ο χρηστης στα
+                        //EditText
                         Pwliseis pwliseis = new Pwliseis();
                         pwliseis.setPpid(pwl_id);
                         pwliseis.setOnoma(pwl_name);

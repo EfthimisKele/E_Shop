@@ -12,8 +12,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 public class UpdateProionta extends Fragment {
-
-
+    //ορισμος μεταβλητων
     EditText e_text1,e_text2,e_text3,e_text4;
     Button submitproion;
 
@@ -24,6 +23,8 @@ public class UpdateProionta extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        //δημιουργια view και αντιστοιχηση μεταβλητων με τη χρηση της findViewById
+        //με τα αναλογα Editext
         View view = inflater.inflate(R.layout.fragment_update_proionta, container, false);
         e_text1 = view.findViewById(R.id.update_textPr1);
         e_text2 = view.findViewById(R.id.update_textPr2);
@@ -33,6 +34,7 @@ public class UpdateProionta extends Fragment {
         submitproion.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                //setOnClickListener στο κουμπι updateproion
                 int Var_prid = 0;
                 try {
                     Var_prid = Integer.parseInt(e_text1.getText().toString());
@@ -42,6 +44,10 @@ public class UpdateProionta extends Fragment {
                 int var_posotita = Integer.parseInt(e_text2.getText().toString());
                 int var_xronologia = Integer.parseInt(e_text3.getText().toString());
                 int var_timi = Integer.parseInt(e_text4.getText().toString());
+
+                //δημιουργια αντικειμενου τυπου Προιοντα και ανανέση του
+                //της εγγραφης σε αυτον τον πινακα με τη χρηση της updateProion
+                //που ειναι στην MyDao
                 Proionta proionta = new Proionta();
                 proionta.setPid(Var_prid);
                 proionta.setPosotita(var_posotita);

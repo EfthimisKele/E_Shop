@@ -58,14 +58,12 @@ public class UpdatePwliseis extends Fragment {
                 }catch (NumberFormatException ex){
                     System.out.println("Could not parse" + ex);
                 }
-
                 int pwlC = 0;
                 try {
                     pwlC = Integer.parseInt(e5.getText().toString());
                 } catch (NumberFormatException ex){
                     System.out.println("Could not parse" + ex);
                 }
-
                 int pwlD = 0;
                 try {
                     pwlD = Integer.parseInt(e6.getText().toString());

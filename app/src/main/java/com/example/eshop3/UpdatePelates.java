@@ -11,14 +11,13 @@ import android.widget.Toast;
 import androidx.fragment.app.Fragment;
 
 public class UpdatePelates extends Fragment {
-
+    //ορισμος μεταβλητων
     EditText update_text1, update_text2, update_text3, update_text4;
     Button updatetuser;
 
     public UpdatePelates() {
         // Required empty public constructor
     }
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,6 +26,8 @@ public class UpdatePelates extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        //δημιουργια view και αντιστοιχηση μεταβλητων με τη χρηση της findViewById
+        //με τα αναλογα Editext
         View view = inflater.inflate(R.layout.fragment_update_pelates, container, false);
         update_text1 = view.findViewById(R.id.update_text1);
         update_text2 = view.findViewById(R.id.update_text2);
@@ -36,7 +37,7 @@ public class UpdatePelates extends Fragment {
         updatetuser.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                //setOnClickListener στο κουμπι updateuser
                 int Var_id = 0;
                 try {
                     Var_id = Integer.parseInt(update_text1.getText().toString());
@@ -47,6 +48,9 @@ public class UpdatePelates extends Fragment {
                 String Var_surname = update_text3.getText().toString();
                 String Var_poli = update_text4.getText().toString();
 
+                //δημιουργια αντικειμενου τυπου Πελατες και ανανέση του
+                //της εγγραφης σε αυτον τον πινακα με τη χρηση της updatePelati
+                //που ειναι στην MyDao
                 Pelates pelates = new Pelates();
                 pelates.setId(Var_id);
                 pelates.setName(Var_name);
