@@ -13,6 +13,7 @@ import android.widget.Toast;
 
 public class DeleteProionta extends Fragment {
 
+    //ορισμος μεταβλητων που θα χρησιμοποιησω
     EditText delete_txtpr;
     Button deletePr;
 
@@ -23,12 +24,19 @@ public class DeleteProionta extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        //Δημιουργια view και κάνω την ένωση των μεταβλητων με τα αντιστοιχα elements
+        //του fragment χρησιμοποιωντας την findViewById
         View view = inflater.inflate(R.layout.fragment_delete_proionta, container, false);
         delete_txtpr = view.findViewById(R.id.delete_txtPr);
         deletePr = view.findViewById(R.id.deletePr);
         deletePr.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                //setOnClickListener στο κουμπί deletePr, δηλαδη τι θα γινει οταν παταει κανεις το κουμπι
+                //Παιρνω την Integer τιμή του EditText, ελέγχω για ερρορ και αμα πανε ολα καλα
+                //Δημιουργω ενα εντικειμενο της κλασης Proionta, του δινω το id που βρηκα πριν λιγο
+                //και καλωντας τη μεθοδο deleteProion που την εχω ορισει στο MyDao γίνεται η αντίστοιχη
+                //διαγραφή Προιον.Τελος εμφανιζω ενα Toast και μηδενιζω τη τιμή του EditText
                 int Var_prid = 0;
                 try {
                     Var_prid = Integer.parseInt(delete_txtpr.getText().toString());

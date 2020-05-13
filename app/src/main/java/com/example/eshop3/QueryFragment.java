@@ -16,6 +16,7 @@ import android.widget.TextView;
 import java.util.List;
 
 public class QueryFragment extends Fragment {
+    //δηλωση μεταβλητων που θα χρησιμοποιησω
     Spinner spinner;
     ArrayAdapter<CharSequence> adapter;
     TextView querytextView, querytextresult;
@@ -29,11 +30,15 @@ public class QueryFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, final ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
+        //δημιουργια view και αναθεση τιμων σε ενα πινακα τυπου String απο ένα string-array που εχω δηλώσει στο strings.xml
         View view = inflater.inflate(R.layout.fragment_query, container, false);
         final String[] queryArray = getResources().getStringArray(R.array.queries_description_array);
 
+        //αναθεση μεταβλητων με την findViewById
         querytextView = view.findViewById(R.id.qeury_txt2);
         spinner = view.findViewById(R.id.spinner);
+
+        //δημιουργια ενος adapter
         adapter = ArrayAdapter.createFromResource(getContext(), R.array.queries_array, R.layout.support_simple_spinner_dropdown_item);
         adapter.setDropDownViewResource(R.layout.support_simple_spinner_dropdown_item);
         spinner.setAdapter(adapter);
@@ -44,11 +49,11 @@ public class QueryFragment extends Fragment {
                 querytextView.setText(queryArray[position]);
                 test = position+1;
             }
-
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
             }
         });
+
         querytextresult =view.findViewById(R.id.query_results_txt);
         B_query_run = view.findViewById(R.id.query_button);
         B_query_run.setOnClickListener(new View.OnClickListener() {
@@ -105,6 +110,7 @@ public class QueryFragment extends Fragment {
                         querytextresult.setText(result);
                         break;
                     case 5:
+                        //παιρνω μια λιστα τυπου Pwliseis και για καθε αντικειμενο Pwliseis εμφανιζω ολα τις στηλες του
                         List<Pwliseis> pwliseis = MainActivity.myAppDatabase.myDao().getPwliseis();
                         for (Pwliseis i: pwliseis){
                             int id = i.getPpid();
@@ -119,7 +125,7 @@ public class QueryFragment extends Fragment {
                         break;
                     case 6:
                         //Βρίσκω τον αριθμό κάθε προιοντος που έχει καταχωρηθει σε καθε καταγραφη στον πινακα Πελατες
-                        //και τα προσθέτω
+                        //και τα προσθέτω. Το ιδιο ισχυει για το το 6,το 7,το 8 και το 9
                         List<Pwliseis> pwliseis2 = MainActivity.myAppDatabase.myDao().getPwliseis();
                         int sum = 0;
                         for (Pwliseis i: pwliseis2) {
@@ -156,6 +162,7 @@ public class QueryFragment extends Fragment {
                         querytextresult.setText(result);
                         break;
                     case 10:
+                        //παιρνω μια λιστα τυπου Pelates και εμφανιζω ενα ενα ολα τα στοιχεια
                         List<Pelates> pelates = MainActivity.myAppDatabase.myDao().getPelates();
                         for (Pelates i: pelates){
                             int id = i.getId();
@@ -167,6 +174,7 @@ public class QueryFragment extends Fragment {
                         querytextresult.setText(result);
                         break;
                     case 11:
+                        //παιρνω μια λιστα τυπου Proionta και εμφανιζω ενα ενα ολα τα στοιχεια
                         List<Proionta> proionta = MainActivity.myAppDatabase.myDao().getProionta();
                         for (Proionta i: proionta){
                             int id = i.getPid();

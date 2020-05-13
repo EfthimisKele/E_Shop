@@ -63,6 +63,9 @@ public class Agora_fragment extends Fragment  implements View.OnClickListener{
     }
     @Override
     public void onClick(View v) {
+
+        //Δημιουργω 4 Strings με τις τιμές των EditText και τα βαζω σε ενα String array
+        //με σκοπο να περασω ολο τον πινακα στην κλαση Kalathi
         String a = p1.getText().toString();
         String b = p2.getText().toString();
         String c = p3.getText().toString();
@@ -70,6 +73,12 @@ public class Agora_fragment extends Fragment  implements View.OnClickListener{
         String[] k = {a, b, c, d};
 
 
+        //μια switch μεθοδο που αναλογα πιο κουμπι παταει ο χρηστης κανει την ανάλλογη ενέργεια
+        //ουσισαστικά το κουμπί προσθήκη δεν κάνει κάτι παρά μόνο να εμφανίζει ενα Toast αλλά
+        //ο χρήστης πατώντας το , καταλαβαίνει ότι το προσθέτει.Στο submit_kalathi, καλείται η μεθοδος
+        //onMessageSend που την εχω δηλωσει στο MainActicity, όπου ξεκιναει ενα transaction και κανει
+        //replace to fragment_container με το kalathi μαζί με τον πίνακα με τα Strings που δημιουργησα
+        //γιατι θα χρειαστουν
         switch (v.getId()){
             case R.id.prosthikiA:
                 Toast.makeText(getActivity(), "Έγινε η προσθήκη στο καλάθι", Toast.LENGTH_SHORT).show();
@@ -89,6 +98,7 @@ public class Agora_fragment extends Fragment  implements View.OnClickListener{
         }
     }
 
+    //μεθοδος απαραιτητη για τη χρήση του messageSendListener
     public void onAttach(Context context){
         super.onAttach(context);
         Activity activity = (Activity) context;
