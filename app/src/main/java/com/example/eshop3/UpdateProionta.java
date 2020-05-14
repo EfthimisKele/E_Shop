@@ -41,20 +41,45 @@ public class UpdateProionta extends Fragment {
                 } catch (NumberFormatException ex){
                     System.out.println("Could not parse" + ex);
                 }
-                int var_posotita = Integer.parseInt(e_text2.getText().toString());
-                int var_xronologia = Integer.parseInt(e_text3.getText().toString());
-                int var_timi = Integer.parseInt(e_text4.getText().toString());
-
-                //δημιουργια αντικειμενου τυπου Προιοντα και ανανέση του
-                //της εγγραφης σε αυτον τον πινακα με τη χρηση της updateProion
-                //που ειναι στην MyDao
-                Proionta proionta = new Proionta();
-                proionta.setPid(Var_prid);
-                proionta.setPosotita(var_posotita);
-                proionta.setXronologia(var_xronologia);
-                proionta.setTimi(var_timi);
-                MainActivity.myAppDatabase.myDao().updateProion(proionta);
-                Toast.makeText(getActivity(), "Όλα καλά",Toast.LENGTH_LONG).show();
+                int var_posotita = 0;
+                try {
+                    var_posotita = Integer.parseInt(e_text2.getText().toString());
+                } catch (NumberFormatException ex) {
+                    System.out.println("Could not parse" + ex);
+                }
+                int var_xronologia = 0;
+                try {
+                    var_xronologia = Integer.parseInt(e_text3.getText().toString());
+                } catch (NumberFormatException ex) {
+                    System.out.println("Could not parse" + ex);
+                }
+                int var_timi = 0;
+                try {
+                    var_timi = Integer.parseInt(e_text4.getText().toString());
+                } catch (NumberFormatException ex) {
+                    System.out.println("Could not parse" + ex);
+                }
+                //ελεγχος αμα καποιο απο τα 3 πεδια ειναι κενο θα εμφανιζει ενα Toast
+                if (var_posotita == 0 || var_xronologia == 0 || var_timi == 0) {
+                    String m = "Δεν έβαλες κάποιο πεδίο ";
+                    Toast.makeText(getActivity(), m, Toast.LENGTH_LONG).show();
+                } else {
+                    try {
+                        //Δημιουργια ενος αντικειμενου τυπου Προιοντα
+                        //και καλωντας τη μεθοδο addProion γινεται η εισαγωγη
+                        //του αντικειμενου με τις  παραπανω μεταβλητες
+                        Proionta proionta = new Proionta();
+                        proionta.setPid(Var_prid);
+                        proionta.setPosotita(var_posotita);
+                        proionta.setXronologia(var_xronologia);
+                        proionta.setTimi(var_timi);
+                        MainActivity.myAppDatabase.myDao().updateProion(proionta);
+                        Toast.makeText(getActivity(), "Όλα καλά", Toast.LENGTH_LONG).show();
+                    } catch (Exception e) {
+                        String message = e.getMessage();
+                        Toast.makeText(getActivity(), message, Toast.LENGTH_LONG).show();
+                    }
+                }
                 e_text1.setText("");
                 e_text2.setText("");
                 e_text3.setText("");

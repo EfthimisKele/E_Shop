@@ -48,20 +48,33 @@ public class UpdatePelates extends Fragment {
                 String Var_surname = update_text3.getText().toString();
                 String Var_poli = update_text4.getText().toString();
 
-                //δημιουργια αντικειμενου τυπου Πελατες και ανανέση του
-                //της εγγραφης σε αυτον τον πινακα με τη χρηση της updatePelati
-                //που ειναι στην MyDao
-                Pelates pelates = new Pelates();
-                pelates.setId(Var_id);
-                pelates.setName(Var_name);
-                pelates.setSurname(Var_surname);
-                pelates.setPoli(Var_poli);
-                MainActivity.myAppDatabase.myDao().updatePelati(pelates);
-                Toast.makeText(getActivity(), "Όλα καλά",Toast.LENGTH_LONG).show();
-                update_text1.setText("");
-                update_text2.setText("");
-                update_text3.setText("");
-                update_text4.setText("");
+                //ελεγχος αμα καποιο απο τα 3 πεδια εκτος του id ειναι κενο τοτε εμφανιζει καταλληλο μηνυμα
+                if(Var_name.equals("")  || Var_surname.equals("") || Var_poli.equals("") ){
+                    String m = "Δεν έβαλες κάποιο πεδίο";
+                    Toast.makeText(getActivity(), m, Toast.LENGTH_LONG).show();
+                }else{
+                    try {
+                        //αν ειναι ολα καλα , δημιουργω νεο αντικειμεο τυπου Πελατες
+                        //εισαγω σε αυτην την εγγραφη ενα ενα τα παραπανω στοιχεια απο τα EditText
+                        //και καλω την συναρτηση addPelati που την εχω ορισει στο myDao
+                        //αλλιως πεταει ερρορ οτι δεν μπορει να γινει η εγγραφη στον πινακα
+                        Pelates pelates = new Pelates();
+                        pelates.setId(Var_id);
+                        pelates.setName(Var_name);
+                        pelates.setSurname(Var_surname);
+                        pelates.setPoli(Var_poli);
+                        MainActivity.myAppDatabase.myDao().updatePelati(pelates);
+                        Toast.makeText(getActivity(), "Όλα καλά", Toast.LENGTH_LONG).show();
+                    } catch (Exception e) {
+                        String message = e.getMessage();
+                        Toast.makeText(getActivity(), message, Toast.LENGTH_LONG).show();
+                    }
+                    //καθαριαζω τα editText και τα κανω κενα
+                    update_text1.setText("");
+                    update_text2.setText("");
+                    update_text3.setText("");
+                    update_text4.setText("");
+                }
 
             }
         });

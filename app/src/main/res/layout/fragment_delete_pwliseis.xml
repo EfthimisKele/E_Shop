@@ -6,8 +6,7 @@
     android:orientation="vertical"
     tools:context=".DeletePwliseis">
 
-
-
+    //LinearLayout με 1 TextView ,6 EditText και 1 κουμπί
     <TextView
         android:id="@+id/txtDeletePwl"
         android:layout_width="match_parent"
