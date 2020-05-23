@@ -16,6 +16,7 @@ import java.util.List;
 
 public class UpdatePwliseis extends Fragment {
 
+    //ορισμός μεταβλητών
     EditText e1,e2,e3,e4,e5,e6;
     Button updatepwl;
 
@@ -27,6 +28,7 @@ public class UpdatePwliseis extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        //δημιουργία View και αντιστοίχηση μεταβλτηών με τα τα κατάλληλα EditText και button
         View view = inflater.inflate(R.layout.fragment_update_pwliseis, container, false);
         e1 = view.findViewById(R.id.update_textPwl1);
         e2 = view.findViewById(R.id.update_textPwl2);
@@ -38,6 +40,7 @@ public class UpdatePwliseis extends Fragment {
         updatepwl.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                //parseΙnt για τον κωδικό και toString για τα υπόλοιπα
                 int Var_prid = 0;
                 try {
                     Var_prid = Integer.parseInt(e1.getText().toString());
@@ -75,10 +78,14 @@ public class UpdatePwliseis extends Fragment {
                     Toast.makeText(getActivity(), m, Toast.LENGTH_LONG).show();
                 } else {
                     try {
+                        //2 λίστες μια ειναι τα προιόντα και η αλλη οι πωλήσεις
                         List<Proionta> proionta1 = MainActivity.myAppDatabase.myDao().getProionta();
                         List<Pwliseis> pwliseis1 = MainActivity.myAppDatabase.myDao().getPwliseis();
+
+                        //αρχικά βρίσκω την εγγραφη αυτης τη πώλησεις μεσα στην λιστα των πωλησεων
                         for (Pwliseis l :pwliseis1) {
                             if (pwl_name.equals(l.getOnoma()) & Var_prid == l.getPpid()) {
+                                //για καθε προϊόν που εχω στο πινακα βρισκω τα στοιχεια του.
                                 for (Proionta i : proionta1) {
                                     Integer p_id = i.getPid();
                                     Integer posotita = i.getPosotita();
@@ -86,6 +93,16 @@ public class UpdatePwliseis extends Fragment {
                                     Integer timi = i.getTimi();
                                     Integer diafora = 0;
                                     Integer diafora2 = 0;
+                                    /* 4 περιπτωσεις που θα κανω τα ιδια πραγματα, γιατι έχω 4 προιόντα,
+                                    σε κάθε περίπτωση δηλάδη για καθε προιον, υπάρχουν 3 υποπεριπτώσεις.Σε κάθε
+                                    υποπερίπτωση ελέγχω άμα η καινούργια τιμή που έβαλε ο χρήστης είναι μεγαλύτερη από το
+                                    απόθεμα του αντίστοιχου προϊόντος , τοτε εμφανίζεται το μήνυμα και δε συνεχίζεται το update
+                                    του πίνακα.1η υποπερίπτωση, η καινούργια τιμή που έλαβε ο χρήστης για το προιον είναι μεγαλύτερη
+                                    από την προηγούμενη αγορά του,τότε κάνω τη διαφορά μεταξύ τους και τη διαφορά τη αφαιρώ από το απόθεμα του προϊόντος.
+                                    2η υποπερίπτωση , η νέα τιμή να είναι μικρότερη από την προηγούμενη , τότε τη διαφορά τους τη προσθέτω στο απόθεμα
+                                    του προιοντος και 3ον αμα ειναι ιδια τιμη μη κανεις τιποτα το αποθεμα παραμένει το ίδιο.
+                                    Το ιδιο κανω 4 φορές και για 4 προιοντα , Α,Β,Γ,Δ.
+                                     */
                                     if (p_id == 1) {
                                         if (pwlA > l.getPosoA()) {
                                             diafora2 = pwlA - l.getPosoA();
@@ -246,6 +263,7 @@ public class UpdatePwliseis extends Fragment {
                                 }
                             }
                         }
+                        //αφου γινουν ολοι οι σωστοί έλεγχοι γινονται το update της εγγραφης στον πινακα Πωλησεις
                         Pwliseis pwliseis = new Pwliseis();
                         pwliseis.setPpid(Var_prid);
                         pwliseis.setOnoma(pwl_name);
